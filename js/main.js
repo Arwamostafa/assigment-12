@@ -1,6 +1,6 @@
 $(".headsing").ready(function(){
      $('.sec').not($(this).next()).slideUp(0);
-     $('#title1').slideDown(0);
+     $('#title1').slideDown();
 })
 $("#sideBar span" ).ready(function(){
     let width=$(".inner").innerWidth();
@@ -9,8 +9,8 @@ $("#sideBar span" ).ready(function(){
 
 $(".headsing").click(function(){
     
-    $('.sec').not($(this).next()).slideUp(100);
-    $(this).next().slideToggle(100);
+    $('.sec').not($(this).next()).slideUp(500);
+    $(this).next().slideToggle(500);
     
 })
 
@@ -21,17 +21,18 @@ $("#sideBar span" ).click(function(){
 
 $(".close").click(function(){
     let width=$(".inner").innerWidth();
-    $("#sideBar").animate({left:-width},1000 )
+    $("#sideBar").animate({left:-width},500 )
 })
 
 $("a").click(function(eventInfo){
     let aherf=eventInfo.target.getAttribute("href");
     let section=$(aherf).offset().top;
+    console.log(section)
     $("body").animate({scrolltop:section},6000)
 })
 
 
-var countDownDate = new Date("oct 7, 2023 15:37:25").getTime();
+var countDownDate = new Date("oct 7, 2024 15:37:25").getTime();
 var x = setInterval(function() {
 
 var now = new Date().getTime();
